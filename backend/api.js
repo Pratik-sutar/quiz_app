@@ -1,0 +1,33 @@
+const express = require("express");
+
+const app = express()
+app.use(express.json())
+const cors = require('cors')
+const questions =require('./routes/Questions')
+const category =require('./routes/Category')
+const register =require('./routes/Register')
+const login =require('./routes/Login')
+const saveResults = require('./routes/SaveResults')
+const profile = require('./routes/Profile')
+const getResults = require('./routes/GetResults')
+const getAllUsers = require('./routes/AdminGetAllUsers')
+const getAllResults = require('./routes/AdminGetAllResults')
+const saveResultQuestion =require('./routes/SaveResultQuestions')
+const getResultQuestions = require('./routes/GetResultsQuestions')
+const getUserSingleResults = require('./routes/GetSingleResult')
+
+app.use(cors())
+app.use(category)
+app.use(register)
+app.use(login)
+app.use(questions)
+app.use(saveResults)
+app.use(profile)
+app.use(getResults)
+app.use(getAllUsers)
+app.use(getAllResults)
+app.use(saveResultQuestion)
+app.use(getResultQuestions)
+app.use(getUserSingleResults)
+
+module.exports = app
